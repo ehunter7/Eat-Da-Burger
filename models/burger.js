@@ -1,6 +1,6 @@
 const orm = require(`../config/orm`);
 
-//Sgets all entries from database
+//Sets all entries from database
 orm.selectAll(`burgers`);
 
 //Inserts a new burger into database
@@ -10,3 +10,7 @@ orm.insertOne(`burgers`, newBurger);
 orm.updateOne(`burgers`, newBurger, idNum);
 
 //TODO: what to export
+// module.exports = tbd;
+
+//exporting the variable and within the variable should be four funcitons all, create, update, delete
+//all refernece orm

@@ -28,6 +28,7 @@ const orm = {
       }
     );
   },
+  //delete function
 };
 
 module.exports = orm;

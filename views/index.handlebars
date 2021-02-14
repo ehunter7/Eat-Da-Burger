@@ -1,0 +1,20 @@
+<ul>
+    {{#each animals}}
+    <li>
+        <p>Type: {{animalType}}</p>
+        <p>Pet: {{pet}}</p>
+        <p>Fierceness: {{fierceness}}</p>
+    </li>
+    {{/each}}
+</ul>
+
+<h2>submit a BURGER!</h2>
+<form id="create-form">
+
+    <div class="form-group">
+        <label for="newBurger">Burger Name:</label>
+        <input type="text" id="NewBurger" name="name">
+    </div>
+
+    <button type="submit">Burger ME!</button>
+</form>

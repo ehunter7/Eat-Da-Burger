@@ -9,8 +9,7 @@ orm.insertOne(`burgers`, newBurger);
 //Updates an burger already in database
 orm.updateOne(`burgers`, newBurger, idNum);
 
-//TODO: what to export
-// module.exports = tbd;
+module.exports = orm;
 
 //exporting the variable and within the variable should be four funcitons all, create, update, delete
 //all refernece orm

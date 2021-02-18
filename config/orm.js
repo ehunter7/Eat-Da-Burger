@@ -61,6 +61,13 @@ const orm = {
     });
   },
   //delete function
+  delete(table, condition, cb) {
+    let queryString = `DELETE FROM ${table} WHERE ${condition}`;
+    connection.query(queryString, (err, res) => {
+      if (err) throw err;
+      cb(result);
+    });
+  },
 };
 
 module.exports = orm;

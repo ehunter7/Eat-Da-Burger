@@ -1,15 +1,24 @@
 const orm = require(`../config/orm`);
 
-//Sets all entries from database
-orm.selectAll(`burgers`);
+const burger = {
+  //Sets all entries from database
+  selectAll(cb) {
+    orm.selectAll(`burgers`, (res) => Cb(res));
+  },
+  //Inserts a new burger into database
+  insertOne(cols, vals, cb) {
+    orm.insertOne(`burgers`, cols, vals, (res) => cb(res));
+  },
 
-//Inserts a new burger into database
-orm.insertOne(`burgers`, newBurger);
+  //Updates an burger already in database
+  updateOne(objColVals, cb) {
+    orm.updateOne(`burgers`, condition, (res) => cb(res));
+  },
+  delete(condition, cb) {
+    orm.delete(`burgers`, condition, (res) => cb(res));
+  },
+};
 
-//Updates an burger already in database
-orm.updateOne(`burgers`, newBurger, idNum);
-
-module.exports = orm;
-
+module.exports = burger;
 //exporting the variable and within the variable should be four funcitons all, create, update, delete
 //all refernece orm

@@ -3,7 +3,7 @@ const orm = require(`../config/orm`);
 const burger = {
   //Sets all entries from database
   selectAll(cb) {
-    orm.selectAll(`burgers`, (res) => Cb(res));
+    orm.selectAll(`burgers`, (res) => cb(res));
   },
   //Inserts a new burger into database
   insertOne(cols, vals, cb) {

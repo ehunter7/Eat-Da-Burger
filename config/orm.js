@@ -1,6 +1,6 @@
 const connection = require("./connection");
 
-require(`connection.js`);
+require(`./connection.js`);
 
 const printQuestionMarks = (num) => {
   const arr = [];
@@ -43,8 +43,7 @@ const orm = {
     });
   },
   insertOne(table, cols, vals, cb) {
-    const queryString = `INSERT INTO ${table} (${cols.toString()}) VALUES 
-    (${printQuestionMarks(vals.length)})`;
+    const queryString = `INSERT INTO ${table} (${cols.toString()}) VALUES ?`;
 
     connection.query(queryString, vals, (err, result) => {
       if (err) throw err;

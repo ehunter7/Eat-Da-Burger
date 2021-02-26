@@ -9,9 +9,6 @@ router.get("/", (req, res) => {
     const hbsObject = {
       burgers: data,
     };
-    console.table(data);
-    console.log(`burgers_controller line 12: ${hbsObject}`);
-    console.table(hbsObject);
     res.render("index", hbsObject);
   });
 });

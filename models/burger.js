@@ -11,8 +11,8 @@ const burger = {
   },
 
   //Updates an burger already in database
-  updateOne(objColVals, cb) {
-    orm.updateOne(`burgers`, condition, (res) => cb(res));
+  updateOne(objColVals, condition, cb) {
+    orm.updateOne(`burgers`, objColVals, condition, (res) => cb(res));
   },
   delete(condition, cb) {
     orm.delete(`burgers`, condition, (res) => cb(res));

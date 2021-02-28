@@ -1,20 +1,20 @@
 const connection = require("./connection");
 
-require(`./connection.js`);
+// require(`./connection.js`);
 
-const printQuestionMarks = (num) => {
-  const arr = [];
+// const printQuestionMarks = (num) => {
+//   const arr = [];
 
-  for (let i = 0; i < num; i++) {
-    arr.push("?");
-  }
+//   for (let i = 0; i < num; i++) {
+//     arr.push("?");
+//   }
 
-  return arr.toString();
-};
+//   return arr.toString();
+// };
 
 const objToSql = (ob) => {
   const arr = [];
-
+console.log(ob);
   // Loop through the keys and push the key/value as a string int arr
   for (const key in ob) {
     let value = ob[key];
@@ -47,13 +47,16 @@ const orm = {
 
     connection.query(queryString, vals, (err, result) => {
       if (err) throw err;
-      cb(results);
+      cb(result);
     });
   },
-  updateOne(table, newValue, condition, cb) {
-    const queryString = `UPDATE ${table} SET ${objToSql(
-      objColVals
-    )} WHERE ${conditon}`;
+  //update function
+  updateOne(table, objColVals, condition, cb) {
+    let queryString = `UPDATE ${table} SET `;
+    queryString += objToSql(objColVals);
+    queryString +=` WHERE `;
+    queryString += condition;
+    console.log(queryString);
     connection.query(queryString, (err, result) => {
       if (err) throw err;
       cb(result);
@@ -64,7 +67,7 @@ const orm = {
     let queryString = `DELETE FROM ${table} WHERE ${condition}`;
     connection.query(queryString, (err, res) => {
       if (err) throw err;
-      cb(result);
+      cb(res);
     });
   },
 };

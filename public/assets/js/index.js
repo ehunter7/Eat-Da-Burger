@@ -11,13 +11,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
   if (changeSleepBtns) {
     changeSleepBtns.forEach((button) => {
       button.addEventListener("click", (e) => {
+        console.log("SMASH!");
         // Grabs the id of the element that goes by the name, "id"
         const id = e.target.getAttribute("data-id");
-        const newSleep = e.target.getAttribute("data-newsleep");
-
-        const newSleepState = {
-          debvoured: newSleep,
+        const newState = e.target.getAttribute("data-state");
+console.log(`newState: ${newState}`);
+        const updateState = {
+          devoured: newState,
         };
+        console.log(JSON.stringify(updateState));
 
         fetch(`/api/burgers/${id}`, {
           method: "PUT",
@@ -27,12 +29,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
           },
 
           // make sure to serialize the JSON body
-          body: JSON.stringify(newSleepState),
+          body: JSON.stringify(updateState),
         }).then((response) => {
           // Check that the response is all good
-          // Reload the page so the user can see the new quote
           if (response.ok) {
-            console.log(`changed devoured to: ${newSleep}`);
+            console.log(`changed devoured to: ${newState}`);
+
+            // Reload the page so the user can see the new quote
             location.reload("/");
           } else {
             alert("something went wrong!");

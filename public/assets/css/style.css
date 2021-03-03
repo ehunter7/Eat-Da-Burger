@@ -1,12 +1,25 @@
+
+
 #addBurger {
-    width: 15%;
+    width: 40%;
 }
 
 .listItem {
-    border: solid green;
+    border-bottom: solid 2px;
+    width: 100%;
+    text-align: center;
 }
 
-.devoured {
-    background-color: blue;
-    border: solid green;
+.burgerBtn {
+    margin-right: 1em;
+    border-style: none;
+    border-top: solid;
+    border-right: solid;
+    border-left: solid;
+}
+
+.mainContent {
+    background-color: lightseagreen;
+    margin:1em;
+    border-radius: .5em;
 }

@@ -43,9 +43,9 @@ const orm = {
     });
   },
   insertOne(table, cols, vals, cb) {
-    const queryString = `INSERT INTO ${table} (${cols.toString()}) VALUES ?`;
+    const queryString = `INSERT INTO ${table} (${cols.toString()}) VALUES ('${vals}')`;
 
-    connection.query(queryString, vals, (err, result) => {
+    connection.query(queryString, (err, result) => {
       if (err) throw err;
       cb(result);
     });

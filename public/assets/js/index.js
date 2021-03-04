@@ -55,9 +55,10 @@ console.log(`newState: ${newState}`);
       // Grabs the value of the textarea that goes by the name, "quote"
       const newCat = {
         name: document.getElementById("ca").value.trim(),
-        sleepy: document.getElementById("devoured").checked,
+        devoured: document.getElementById("devoured").checked,
       };
-
+console.log(document.getElementById("devoured").checked);
+      console.log(newCat);
       // Send POST request to create a new quote
       fetch("/api/burgers", {
         method: "POST",

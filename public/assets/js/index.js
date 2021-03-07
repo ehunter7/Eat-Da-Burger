@@ -81,7 +81,7 @@ console.log(document.getElementById("devoured").checked);
   }
 
   // DELETE
-  const deleteCatBtns = document.querySelectorAll(".delete-cat");
+  const deleteCatBtns = document.querySelectorAll(".delete-burger");
 
   // Set up the event listeners for each delete button
   deleteCatBtns.forEach((button) => {
@@ -93,7 +93,7 @@ console.log(document.getElementById("devoured").checked);
         method: "DELETE",
       }).then((res) => {
         console.log(res);
-        console.log(`Deleted cat: ${id}`);
+        console.log(`Deleted burger: ${id}`);
 
         // Reload the page
         location.reload();

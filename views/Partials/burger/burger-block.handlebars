@@ -1,9 +1,12 @@
 <div class="listItem">
-    <h4>{{burger_name}}</h4>
+    <div class="col-6 burgerName">
+        <h4>{{burger_name}}</h4>
+    </div>
+    <div class="col-6">
+        <button class="change-sleep burgerBtn" data-id="{{id}}" data-state="{{devoured}}">
+            {{#if devoured}}SMASH!{{else}}DEVOURED!{{/if}}
+        </button>
 
-    <button class="change-sleep burgerBtn" data-id="{{id}}" data-state="{{devoured}}">
-        {{#if devoured}}SMASH!{{else}}DEVOURED!{{/if}}
-    </button>
-
-    <button class="delete-burger burgerBtn" data-id="{{this.id}}">DELETE!</button>
+        <button class="delete-burger burgerBtn" data-id="{{this.id}}">DELETE!</button>
+    </div>
 </div>

@@ -1,8 +1,17 @@
-<h1>Burgers!</h1>
-<section class="container">
-    <div class="row">
+<nav class="navbar navbar-dark bg-dark ">
+    <div class="container-fluid">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4 text-white ">Burgers!</h1>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<section class="container ">
+    <div class="row content">
         <section class="col-5 mainContent">
-            <h2>Burgers that have not been devoured!</h2>
+            <h2 class="text-center">DEVOURED</h2>
             <div>
                 {{#each burgers}}
                 {{#unless devoured}}
@@ -12,7 +21,7 @@
             </div>
         </section>
         <section class="col-5 mainContent" id="devoured">
-            <h2>Cats that are sleepy!</h2>
+            <h2 class="text-center">PENDING</h2>
             <div>
                 {{#each burgers}}
                 {{#if devoured}}
@@ -23,24 +32,38 @@
         </section>
     </div>
 </section>
-
-<section class="container" id="addBurger">
-    <h2>Add a Burger</h2>
-    <form id="create-form">
-
-        <div class="form-group">
-            <div>
-                <label for="ca">Burger Name:</label>
+<div class="add_section container">
+    <div class="row">
+        <section class="" id="addBurger">
+            <div class="col-3 addheader">
+                <h2>Add a Burger</h2>
             </div>
-            <input type="text" id="ca" name="name">
-        </div>
 
-        <div class="form-group">
-            <label for="devoured">devoured?</label><br>
-            <input type="radio" name="devoured" value="1" id="devoured" checked> devoured!<br>
-            <input type="radio" name="devoured" value="0" id="awake"> Pending Smashing!
-        </div>
+            <form id="create-form">
 
-        <button type="submit">Add Burger</button>
-    </form>
-</section>
+                <div class="row">
+
+                    <div class="form-group addAburger burgername col-4">
+                        <label for="ca">Burger Name:</label>
+                        <input type="text" id="ca" name="name">
+                    </div>
+
+                    <div class="form-group addAburger col-5">
+                        <label for="devoured">devoured?</label><br>
+                        <input type="radio" name="devoured" value="1" id="devoured" checked> devoured!<br>
+                        <input type="radio" name="devoured" value="0" id="awake"> Pending Smashing!
+                    </div>
+
+                    <div class="form-group addAburger btn-group col-1">
+                        <button class="burger_btn" type="submit">Add</button>
+                    </div>
+
+                </div>
+
+            </form>
+        </section>
+    </div>
+</div>
+<footer class="foot">
+    <p class=" text-white text-center ">@ Yeah Buddy</p>
+</footer>

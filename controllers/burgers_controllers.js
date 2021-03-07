@@ -30,10 +30,11 @@ router.put(`/api/burgers/:id`, (req, res) => {
   });
 });
 
-router.delete(`/api/burger/:id`, (req, res) => {
+router.delete(`/api/burgers/:id`, (req, res) => {
   const condition = `id = ${req.params.id}`;
 
   db.delete(condition, (result) => {
+    console.log(result);
     if (result.affectedRows === 0) {
       return res.status(404).end();
     }

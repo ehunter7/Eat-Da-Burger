@@ -1,25 +1,80 @@
-
-
 #addBurger {
-    width: 40%;
+  display: inline-flex;
+  justify-content: center;
+}
+
+.add_section {
+  width: 60%;
+  justify-content: center;
+  background-color: cadetblue;
+  border-radius: 2em;
+}
+
+.create-form {
+  display: flex;
+}
+
+.addAburger {
+  margin-left: 1em;
+}
+
+.burgername {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.btn-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.burger_btn {
+  height: 4em;
+  width: 4em;
+
+  border-style: none;
+  border: solid;
+  border-radius: 50%;
+}
+
+.addheader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .listItem {
-    border-bottom: solid 2px;
-    width: 100%;
-    text-align: center;
+  background-color: cadetblue;
+  border-radius: 2em;
+  margin: 0.2em;
+  width: 100%;
+  text-align: center;
+  display: inline-flex;
 }
 
 .burgerBtn {
-    margin-right: 1em;
-    border-style: none;
-    border-top: solid;
-    border-right: solid;
-    border-left: solid;
+  justify-content: center;
+  margin: 0.5em;
+  border-style: none;
+  border: solid;
+  border-radius: 2em;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
 }
 
 .mainContent {
-    background-color: lightseagreen;
-    margin:1em;
-    border-radius: .5em;
+  margin: 1em;
+  border-radius: 0.5em;
+  justify-content: center;
+}
+
+.burgerName {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

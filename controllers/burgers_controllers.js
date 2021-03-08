@@ -1,7 +1,6 @@
 const express = require("express");
 const db = require("../models/burger");
 
-//Create the "router" for the app, and export the "router" at the end of your file.
 const router = express.Router();
 
 router.get("/", (req, res) => {
@@ -21,7 +20,7 @@ router.post(`/api/burgers`, (req, res) => {
 
 router.put(`/api/burgers/:id`, (req, res) => {
   const condition = `id = ${req.params.id}`;
-  console.log(`condition`, condition);
+
   db.updateOne({ devoured: req.body.devoured }, condition, (result) => {
     if (result.changedRows === 0) {
       return res.status(400).end();
@@ -34,7 +33,6 @@ router.delete(`/api/burgers/:id`, (req, res) => {
   const condition = `id = ${req.params.id}`;
 
   db.delete(condition, (result) => {
-    console.log(result);
     if (result.affectedRows === 0) {
       return res.status(404).end();
     }

@@ -1,31 +1,16 @@
 const connection = require("./connection");
 
-// require(`./connection.js`);
-
-// const printQuestionMarks = (num) => {
-//   const arr = [];
-
-//   for (let i = 0; i < num; i++) {
-//     arr.push("?");
-//   }
-
-//   return arr.toString();
-// };
-
 const objToSql = (ob) => {
   const arr = [];
-console.log(ob);
+  console.log(ob);
   // Loop through the keys and push the key/value as a string int arr
   for (const key in ob) {
     let value = ob[key];
     // Check to skip hidden properties
     if (Object.hasOwnProperty.call(ob, key)) {
-      // If string with spaces, add quotations (Lana Del Grey => 'Lana Del Grey')
       if (typeof value === "string" && value.indexOf(" ") >= 0) {
         value = `'${value}'`;
       }
-      // e.g. {name: 'Lana Del Grey'} => ["name='Lana Del Grey'"]
-      // e.g. {sleepy: true} => ["sleepy=true"]
       arr.push(`${key}=${value}`);
     }
   }
@@ -54,7 +39,7 @@ const orm = {
   updateOne(table, objColVals, condition, cb) {
     let queryString = `UPDATE ${table} SET `;
     queryString += objToSql(objColVals);
-    queryString +=` WHERE `;
+    queryString += ` WHERE `;
     queryString += condition;
     console.log(queryString);
     connection.query(queryString, (err, result) => {

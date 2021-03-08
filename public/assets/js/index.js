@@ -5,17 +5,17 @@ document.addEventListener("DOMContentLoaded", (event) => {
   }
 
   // UPDATE
-  const changeSleepBtns = document.querySelectorAll(".change-sleep");
+  const changeStatusBtns = document.querySelectorAll(".change-status");
 
   // Set up the event listener for the create button
-  if (changeSleepBtns) {
-    changeSleepBtns.forEach((button) => {
+  if (changeStatusBtns) {
+    changeStatusBtns.forEach((button) => {
       button.addEventListener("click", (e) => {
         console.log("SMASH!");
         // Grabs the id of the element that goes by the name, "id"
         const id = e.target.getAttribute("data-id");
         const newState = e.target.getAttribute("data-state");
-console.log(`newState: ${newState}`);
+
         const updateState = {
           devoured: newState,
         };
@@ -46,19 +46,19 @@ console.log(`newState: ${newState}`);
   }
 
   // CREATE
-  const createCatBtn = document.getElementById("create-form");
+  const createBurgerBtn = document.getElementById("create-form");
 
-  if (createCatBtn) {
-    createCatBtn.addEventListener("submit", (e) => {
+  if (createBurgerBtn) {
+    createBurgerBtn.addEventListener("submit", (e) => {
       e.preventDefault();
 
       // Grabs the value of the textarea that goes by the name, "quote"
-      const newCat = {
+      const newBurger = {
         name: document.getElementById("ca").value.trim(),
         devoured: document.getElementById("devoured").checked,
       };
 console.log(document.getElementById("devoured").checked);
-      console.log(newCat);
+
       // Send POST request to create a new quote
       fetch("/api/burgers", {
         method: "POST",
@@ -68,7 +68,7 @@ console.log(document.getElementById("devoured").checked);
         },
 
         // make sure to serialize the JSON body
-        body: JSON.stringify(newCat),
+        body: JSON.stringify(newBurger),
       }).then(() => {
         // Empty the form
         document.getElementById("ca").value = "";
@@ -81,10 +81,10 @@ console.log(document.getElementById("devoured").checked);
   }
 
   // DELETE
-  const deleteCatBtns = document.querySelectorAll(".delete-burger");
+  const deleteBurgerBtns = document.querySelectorAll(".delete-burger");
 
   // Set up the event listeners for each delete button
-  deleteCatBtns.forEach((button) => {
+  deleteBurgerBtns.forEach((button) => {
     button.addEventListener("click", (e) => {
       const id = e.target.getAttribute("data-id");
 
